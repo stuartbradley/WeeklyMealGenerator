@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android        ="http://schemas.android.com/apk/res/android"
+	android:orientation  ="vertical"
+	android:layout_width ="match_parent"
+	android:layout_height="match_parent"
+	android:layout_margin="5dp">>
+	<Button
+		android:text="View meals"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnViewMeals" />
+		<Button
+		android:text="View fruit"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnViewFruit" />
+	<LinearLayout
+		android:layout_width ="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp">
+		<TextView
+			android:layout_width       ="wrap_content"
+			android:layout_height      ="wrap_content"
+			android:text               ="Meals available:"
+			android:layout_marginRight ="10dp"
+			android:layout_marginTop   ="14.6dp" />
+		<TextView
+			android:layout_width       ="wrap_content"
+			android:layout_height      ="wrap_content"
+			android:text               ="placeholder"
+			android:layout_marginRight ="10dp"
+			android:layout_marginTop   ="14.6dp" />
+	</LinearLayout>
+		<LinearLayout
+		android:layout_width ="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp">
+		<TextView
+			android:layout_width       ="wrap_content"
+			android:layout_height      ="wrap_content"
+			android:text               ="Meals left:"
+			android:layout_marginRight ="10dp" />
+		<TextView
+			android:layout_width       ="wrap_content"
+			android:layout_height      ="wrap_content"
+			android:text               ="placeholder"
+			android:layout_marginRight ="10dp" />
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width ="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop = "0.0dp"
+		android:layout_marginLeft = "10dp"
+		android:layout_marginBottom="0.0dp"
+		>
+		<TextView
+			android:layout_width       ="wrap_content"
+			android:layout_height      ="wrap_content"
+			android:text               ="Meals wanted:"
+			android:layout_marginRight ="10dp"
+			android:layout_marginBottom="6.6dp"
+			android:layout_marginTop   ="5dp" />
+		<EditText
+			android:id			  ="@+id/inputMealsWanted"
+			android:layout_gravity="center"
+			android:layout_width  ="50dp"
+			android:layout_height ="37.5dp"
+			android:inputType = "number"
+		    android:textSize = "12dp"
+			android:layout_marginTop="0.0dp"
+			android:layout_marginBottom="0.0dp" />
+	</LinearLayout>
+	<CheckBox
+		android:text="Include fruits"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="5dp"
+		android:id="@+id/cbIncludeFruit" />
+	<LinearLayout
+		android:layout_width ="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop = "0.0dp"
+		android:layout_marginLeft = "10dp"
+		android:layout_marginBottom="0.0dp"
+		android:id = "@+id/layoutFruit"
+		android:visibility = "gone"
+		>
+		<TextView
+			android:layout_width       ="wrap_content"
+			android:layout_height      ="wrap_content"
+			android:text               ="# of Fruit:"
+			android:layout_marginRight ="10dp"
+			android:layout_marginBottom="6.6dp"
+			android:layout_marginTop   ="5dp" />
+		<EditText
+			android:id			  ="@+id/inputFruitWanted"
+			android:layout_gravity="center"
+			android:layout_width  ="50dp"
+			android:layout_height ="37.5dp"
+			android:inputType = "number"
+			android:textSize = "12dp"
+			android:layout_marginTop="0.0dp"
+			android:layout_marginBottom="0.0dp" />
+	</LinearLayout>
+
+
+		<Button
+		android:text="Generate menu"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/btnGenerateMenu" />
+	
+
+</LinearLayout>
