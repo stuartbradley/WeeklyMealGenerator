@@ -20,5 +20,10 @@ namespace WeeklyMealGenerator.Models
 
         [ManyToMany(typeof(Recipe))]
         public List<Meal> Meals { get; set; }
+
+        [ManyToMany(typeof(ShoppingListIngredient))]
+        public List<ShoppingList> ShoppingLists { get; set; }
+
+
     }
 }

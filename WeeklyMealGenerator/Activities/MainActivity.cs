@@ -10,6 +10,7 @@ using WeeklyMealGenerator.Models;
 using SQLiteNetExtensions.Extensions;
 using System.Collections.Generic;
 using WeeklyMealGenerator.Database;
+using WeeklyMealGenerator.Activities;
 
 namespace WeeklyMealGenerator
 {
@@ -43,13 +44,16 @@ namespace WeeklyMealGenerator
 
         private void btnGenerateMenuClicked(object sender, EventArgs e)
         {
-            int numberOfRequestedMeals = Int32.Parse(FindViewById<TextView>(Resource.Id.inputMealsWanted).Text);
-            int numberOfRequestedFruit = Int32.Parse(FindViewById<TextView>(Resource.Id.inputFruitWanted).Text);
+            //int numberOfRequestedMeals = Int32.Parse(FindViewById<TextView>(Resource.Id.inputMealsWanted).Text);
+            //int numberOfRequestedFruit = Int32.Parse(FindViewById<TextView>(Resource.Id.inputFruitWanted).Text);
 
-            Intent intent = new Intent(this, typeof(ViewGeneratedMenu));
-            
-            intent.PutExtra("numberOfMeals", numberOfRequestedMeals);
-            intent.PutExtra("numberOfFruits", numberOfRequestedFruit);
+            //Intent intent = new Intent(this, typeof(ViewGeneratedMenu));
+
+            //intent.PutExtra("numberOfMeals", numberOfRequestedMeals);
+            //intent.PutExtra("numberOfFruits", numberOfRequestedFruit);
+            //StartActivity(intent);
+
+            Intent intent = new Intent(this, typeof(ViewShoppingListActivity));
             StartActivity(intent);
         }
 

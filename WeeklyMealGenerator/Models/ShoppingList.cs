@@ -23,10 +23,17 @@ namespace WeeklyMealGenerator.Models
 
         public string Date { get; set; }
 
-        [ManyToMany(typeof(ShoppingListMeal))]
-        public List<Meal> Meals { get; set; }
+        //[ManyToMany(typeof(ShoppingListMeal))]
+        //public List<Meal> Meals { get; set; }
 
+        [ManyToMany(typeof(ShoppingListFruit))]
+        public List<Fruit> Fruits { get; set; }
 
+        [ManyToMany(typeof(ShoppingListFruit))]
+        public List<Ingredient> Ingredients { get; set; }
+
+        [ManyToMany(typeof(ShoppingListFruit))]
+        public List<MiscItem> MiscItems { get; set; }
 
     }
 }

@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using WeeklyMealGenerator.Models;
+using SQLiteNetExtensions.Extensions;
 
 namespace WeeklyMealGenerator.Adapters
 {
@@ -18,9 +19,9 @@ namespace WeeklyMealGenerator.Adapters
         private readonly List<ShoppingList> ShoppingLists;
         private readonly Activity _activity;
 
-        public ThreeTextAdapter(Activity activity, IEnumerable<ShoppingList> fruits)
+        public ThreeTextAdapter(Activity activity, IEnumerable<ShoppingList> shoppingLists)
         {
-            this.ShoppingLists = fruits.OrderBy(s => s.Name).ToList();
+            this.ShoppingLists = shoppingLists.ToList();
             _activity = activity;
         }
 
@@ -50,22 +51,19 @@ namespace WeeklyMealGenerator.Adapters
 
             }
 
-            var ShoppingList = ShoppingLists[position];
+            var shoppingList = ShoppingLists[position];
 
             TextView text1 = view.FindViewById<TextView>(Resource.Id.textView1);
-            text1.Text = ShoppingList.Name;
+            text1.Text = shoppingList.Name;
 
             TextView text2 = view.FindViewById<TextView>(Resource.Id.TextView2);
-            text2.Text = ShoppingList.Date;
+            text2.Text = shoppingList.Date;
+            
+            TextView text3 = view.FindViewById<TextView>(Resource.Id.TextView3);        
 
-            TextView text3 = view.FindViewById<TextView>(Resource.Id.TextView3);
-            int numberOfItems;
             SQLite.SQLiteConnection db = new SQLite.SQLiteConnection(Database.DataStore.DBPATH);
-                
-
-
-
-
+            var shoppingListWithItems = db.FindWithChildren<ShoppingList>(shoppingList);
+            text3.Text = (shoppingListWithItems.Ingredients.Count + shoppingListWithItems.MiscItems.Count + shoppingListWithItems.Fruits.Count) + "";
             return view;
 
         }

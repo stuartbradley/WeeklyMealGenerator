@@ -59,7 +59,7 @@ namespace WeeklyMealGenerator.Adapters
             text1.Text = fruit.Name;
 
             TextView text2 = view.FindViewById<TextView>(Android.Resource.Id.Text2);
-            text2.Text = "Chosen " + fruit.NumberOfTimesPicked.ToString() + " number of times";
+            text2.Text = "Randomly picked " + fruit.NumberOfTimesPicked.ToString() + " times";
 
             return view;
         }

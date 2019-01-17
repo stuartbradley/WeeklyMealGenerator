@@ -3042,6 +3042,9 @@ namespace WeeklyMealGenerator
 			// aapt resource value: 0x7f090094
 			public const int AddMeal_btnAddMeal = 2131296404;
 			
+			// aapt resource value: 0x7f0900d8
+			public const int AddShoppingList = 2131296472;
+			
 			// aapt resource value: 0x7f090033
 			public const int CTRL = 2131296307;
 			
@@ -3050,6 +3053,9 @@ namespace WeeklyMealGenerator
 			
 			// aapt resource value: 0x7f090034
 			public const int FUNCTION = 2131296308;
+			
+			// aapt resource value: 0x7f0900d9
+			public const int ListViewShoppingList = 2131296473;
 			
 			// aapt resource value: 0x7f090035
 			public const int META = 2131296309;
@@ -3063,11 +3069,11 @@ namespace WeeklyMealGenerator
 			// aapt resource value: 0x7f090037
 			public const int SYM = 2131296311;
 			
-			// aapt resource value: 0x7f0900d9
-			public const int TextView2 = 2131296473;
+			// aapt resource value: 0x7f0900db
+			public const int TextView2 = 2131296475;
 			
-			// aapt resource value: 0x7f0900da
-			public const int TextView3 = 2131296474;
+			// aapt resource value: 0x7f0900dc
+			public const int TextView3 = 2131296476;
 			
 			// aapt resource value: 0x7f0900c2
 			public const int action0 = 2131296450;
@@ -3348,8 +3354,8 @@ namespace WeeklyMealGenerator
 			// aapt resource value: 0x7f090061
 			public const int list_item = 2131296353;
 			
-			// aapt resource value: 0x7f0900dc
-			public const int masked = 2131296476;
+			// aapt resource value: 0x7f0900de
+			public const int masked = 2131296478;
 			
 			// aapt resource value: 0x7f0900c5
 			public const int media_actions = 2131296453;
@@ -3621,8 +3627,8 @@ namespace WeeklyMealGenerator
 			// aapt resource value: 0x7f090069
 			public const int textSpacerNoTitle = 2131296361;
 			
-			// aapt resource value: 0x7f0900d8
-			public const int textView1 = 2131296472;
+			// aapt resource value: 0x7f0900da
+			public const int textView1 = 2131296474;
 			
 			// aapt resource value: 0x7f0900a2
 			public const int text_input_password_toggle = 2131296418;
@@ -3681,8 +3687,8 @@ namespace WeeklyMealGenerator
 			// aapt resource value: 0x7f090016
 			public const int view_offset_helper = 2131296278;
 			
-			// aapt resource value: 0x7f0900db
-			public const int visible = 2131296475;
+			// aapt resource value: 0x7f0900dd
+			public const int visible = 2131296477;
 			
 			// aapt resource value: 0x7f0900b7
 			public const int volume_item_container = 2131296439;
@@ -3997,7 +4003,10 @@ namespace WeeklyMealGenerator
 			public const int ViewMeals = 2130968648;
 			
 			// aapt resource value: 0x7f040049
-			public const int wayListView = 2130968649;
+			public const int ViewShoppingLists = 2130968649;
+			
+			// aapt resource value: 0x7f04004a
+			public const int wayListView = 2130968650;
 			
 			static Layout()
 			{

@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace WeeklyMealGenerator.Models
 {
@@ -22,7 +23,13 @@ namespace WeeklyMealGenerator.Models
         public string Name { get; set; }
         public int NumberOfTimesPicked { get; private set; }
 
+        [ManyToMany(typeof(ShoppingListFruit))]
+        public List<ShoppingList> ShoppingLists { get; set; }
 
+        public Fruit()
+        {
+            NumberOfTimesPicked = 0;
+        }
         public void IncrementTimesPicked()
         {
             NumberOfTimesPicked++;

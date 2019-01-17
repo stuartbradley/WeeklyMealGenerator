@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace WeeklyMealGenerator.Models
 {
     [Table("Meals")]
-    public class Meal:IShoppingItem,Java.Lang.Object
+    public class Meal: Java.Lang.Object,IShoppingItem
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

@@ -25,6 +25,7 @@ namespace WeeklyMealGenerator.Activities
     {
         private ListView listView;
         private List<Ingredient> ingredients;
+        View v;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,11 +35,12 @@ namespace WeeklyMealGenerator.Activities
             using (var db = new SQLiteConnection(Database.DataStore.DBPATH))
                 ingredients = db.GetAllWithChildren<Ingredient>();
 
-            listView = (ListView)FindViewById(Resource.Id.AddMealIngredients);
+            listView = (ListView)FindViewById(Resource.Id.ListViewShoppingList);
             ArrayAdapter<Ingredient> arrayAdapter = new ArrayAdapter<Ingredient>(this, Android.Resource.Layout.SimpleListItemActivated1, ingredients.OrderBy(r => r.Name).ToList());
             listView.Adapter = arrayAdapter;
             listView.ChoiceMode = ChoiceMode.Multiple;
             FindViewById<Button>(Resource.Id.AddMeal_btnAddMeal).Click += btnAddMeal_OnClick;
+
         }
 
         private void btnAddMeal_OnClick(object sender, EventArgs e)

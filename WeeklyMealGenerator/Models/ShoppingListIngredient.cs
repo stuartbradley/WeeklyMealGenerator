@@ -3,13 +3,13 @@ using SQLiteNetExtensions.Attributes;
 
 namespace WeeklyMealGenerator.Models
 {
-    [Table("ShoppingListMeals")]
-    public class ShoppingListMeal
+    [Table("ShoppingListIngredients")]
+    public class ShoppingListIngredient
     {
         [ForeignKey(typeof(ShoppingList))]
         public int ShoppingListId { get; set; }
 
-        [ForeignKey(typeof(Meal))]
-        public int MealId { get; set; }
+        [ForeignKey(typeof(Ingredient))]
+        public int IngredientId { get; set; }
     }
 }

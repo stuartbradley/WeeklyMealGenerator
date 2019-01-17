@@ -59,8 +59,6 @@ namespace WeeklyMealGenerator
             });
             Android.Support.V7.App.AlertDialog dialog = alertbuilder.Create();
             dialog.Show();
-
-
         }
         private void OkAction(object sender, DialogClickEventArgs e)
         {
@@ -69,9 +67,7 @@ namespace WeeklyMealGenerator
             {
                 conn.Insert(new Fruit
                 {
-                    _id = null,
                     Name = userdata.Text,
-                    NumberOfTimesPicked = 0
                 });
             }
             SetPage();

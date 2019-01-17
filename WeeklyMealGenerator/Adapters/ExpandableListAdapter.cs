@@ -5,6 +5,7 @@ using Android.App;
 using Android.Views;
 using WeeklyMealGenerator;
 using WeeklyMealGenerator.Models;
+using Android.Graphics;
 
 namespace WeeklyMealGenerator
 {
@@ -39,6 +40,7 @@ namespace WeeklyMealGenerator
             }
             TextView txtListChild = (TextView)convertView.FindViewById(Resource.Id.lblListItem);
             txtListChild.Text = childText;
+            convertView.SetBackgroundColor(Color.MediumPurple);
             return convertView;
         }
         public override int GetChildrenCount(int groupPosition)
@@ -68,7 +70,14 @@ namespace WeeklyMealGenerator
             convertView = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.ExpandableHeaderCustomLayout, null);
             var lblListHeader = (TextView)convertView.FindViewById(Resource.Id.lblListHeader);
             lblListHeader.Text = headerTitle;
-
+            if (isExpanded)
+            {
+                convertView.SetBackgroundColor(Color.LightSalmon);
+            }
+            else
+            {
+                convertView.SetBackgroundColor(Color.White);
+            }
             return convertView;
         }
         public override bool HasStableIds

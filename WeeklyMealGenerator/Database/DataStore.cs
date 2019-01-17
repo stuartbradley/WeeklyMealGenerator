@@ -30,6 +30,12 @@ namespace WeeklyMealGenerator.Database
             db.CreateTable<Recipe>();
             db.CreateTable<ShoppingList>();
 
+            //create join tables
+
+            db.CreateTable<MiscItem>();
+            db.CreateTable<ShoppingListMiscItems>();
+            db.CreateTable<ShoppingListIngredient>();
+            db.CreateTable<ShoppingListFruit>();
 
 
 
