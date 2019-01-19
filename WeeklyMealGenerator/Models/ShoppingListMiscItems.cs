@@ -14,13 +14,15 @@ using SQLiteNetExtensions.Attributes;
 
 namespace WeeklyMealGenerator.Models
 {
-    [Table("ShoppingListMeals")]
+    [Table("ShoppingListMiscItems")]
     public class ShoppingListMiscItems
     {
         [ForeignKey(typeof(ShoppingList))]
         public int ShoppingListId { get; set; }
 
-        [ForeignKey(typeof(Meal))]
-        public int MealId { get; set; }
+        [ForeignKey(typeof(MiscItem))]
+        public int MiscItemId { get; set; }
+
+        public bool PickedUp { get; set; }
     }
 }

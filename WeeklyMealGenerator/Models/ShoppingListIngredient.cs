@@ -11,5 +11,7 @@ namespace WeeklyMealGenerator.Models
 
         [ForeignKey(typeof(Ingredient))]
         public int IngredientId { get; set; }
+
+        public bool PickedUp { get; set; }
     }
 }

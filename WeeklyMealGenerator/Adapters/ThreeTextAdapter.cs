@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using WeeklyMealGenerator.Models;
 using SQLiteNetExtensions.Extensions;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace WeeklyMealGenerator.Adapters
 {
@@ -47,23 +48,23 @@ namespace WeeklyMealGenerator.Adapters
             if (view == null)
             {
 
-                view = _activity.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2, null);
+                view = _activity.LayoutInflater.Inflate(Resource.Layout.wayListView, null);
 
             }
 
             var shoppingList = ShoppingLists[position];
 
-            TextView text1 = view.FindViewById<TextView>(Resource.Id.textView1);
+            TextView text1 = view.FindViewById<TextView>(Resource.Id.wayTextView1);
             text1.Text = shoppingList.Name;
 
-            TextView text2 = view.FindViewById<TextView>(Resource.Id.TextView2);
+            TextView text2 = view.FindViewById<TextView>(Resource.Id.wayTextView2);
             text2.Text = shoppingList.Date;
             
-            TextView text3 = view.FindViewById<TextView>(Resource.Id.TextView3);        
+            TextView text3 = view.FindViewById<TextView>(Resource.Id.wayTextView3);        
 
-            SQLite.SQLiteConnection db = new SQLite.SQLiteConnection(Database.DataStore.DBPATH);
-            var shoppingListWithItems = db.FindWithChildren<ShoppingList>(shoppingList);
-            text3.Text = (shoppingListWithItems.Ingredients.Count + shoppingListWithItems.MiscItems.Count + shoppingListWithItems.Fruits.Count) + "";
+            //SQLite.SQLiteConnection db = new SQLite.SQLiteConnection(Database.DataStore.DBPATH);
+            //ShoppingList shoppingListWithItems = db.FindWithChildren<ShoppingList>(shoppingList);
+            text3.Text = (shoppingList.Ingredients.Count + shoppingList.MiscItems.Count + shoppingList.Fruits.Count) + "";
             return view;
 
         }

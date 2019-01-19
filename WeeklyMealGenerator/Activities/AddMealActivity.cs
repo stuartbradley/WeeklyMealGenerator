@@ -35,7 +35,7 @@ namespace WeeklyMealGenerator.Activities
             using (var db = new SQLiteConnection(Database.DataStore.DBPATH))
                 ingredients = db.GetAllWithChildren<Ingredient>();
 
-            listView = (ListView)FindViewById(Resource.Id.ListViewShoppingList);
+            listView = (ListView)FindViewById(Resource.Id.AddMealIngredients);
             ArrayAdapter<Ingredient> arrayAdapter = new ArrayAdapter<Ingredient>(this, Android.Resource.Layout.SimpleListItemActivated1, ingredients.OrderBy(r => r.Name).ToList());
             listView.Adapter = arrayAdapter;
             listView.ChoiceMode = ChoiceMode.Multiple;

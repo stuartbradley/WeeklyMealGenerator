@@ -24,10 +24,21 @@ namespace WeeklyMealGenerator
             SetContentView(Resource.Layout.activity_main);
             SetDataBaseForFirstTime();
 
+            SQLite.SQLiteConnection db = new SQLite.SQLiteConnection(Database.DataStore.DBPATH);
+            var shoppingListWithItems = db.GetAllWithChildren<ShoppingList>();
+
             FindViewById<CheckBox>(Resource.Id.cbIncludeFruit).CheckedChange += CbIncludeFruitChanged;
             FindViewById<Button>(Resource.Id.btnViewMeals).Click += btnViewMealsClicked;
             FindViewById<Button>(Resource.Id.btnViewFruit).Click += btnViewFruitClicked;
             FindViewById<Button>(Resource.Id.btnGenerateMenu).Click += btnGenerateMenuClicked;
+            FindViewById<Button>(Resource.Id.btnViewShoppingList).Click += btnViewShoppingListClicked;
+        }
+
+        private void btnViewShoppingListClicked(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ViewShoppingListActivity));
+            StartActivity(intent);
+
         }
 
         private void SetDataBaseForFirstTime()

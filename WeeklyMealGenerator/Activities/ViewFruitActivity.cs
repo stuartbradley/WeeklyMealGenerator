@@ -12,6 +12,7 @@ using Android.Widget;
 using WeeklyMealGenerator.Adapters;
 using WeeklyMealGenerator.Adapters.WeeklyMealGenerator.Adapters;
 using WeeklyMealGenerator.Models;
+using SQLiteNetExtensions.Extensions;
 
 namespace WeeklyMealGenerator
 {
@@ -35,7 +36,7 @@ namespace WeeklyMealGenerator
 
             using (var conn = new SQLite.SQLiteConnection(Database.DataStore.DBPATH))
             {
-                fruits = conn.CreateCommand("Select * from Fruit").ExecuteQuery<Fruit>().ToList();
+                fruits = conn.GetAllWithChildren<Fruit>();
             }
             var adapter = new SimpleListItem2Adapter(this, fruits);
             this.ListAdapter = adapter;

@@ -29,10 +29,10 @@ namespace WeeklyMealGenerator.Models
         [ManyToMany(typeof(ShoppingListFruit))]
         public List<Fruit> Fruits { get; set; }
 
-        [ManyToMany(typeof(ShoppingListFruit))]
+        [ManyToMany(typeof(ShoppingListIngredient))]
         public List<Ingredient> Ingredients { get; set; }
 
-        [ManyToMany(typeof(ShoppingListFruit))]
+        [ManyToMany(typeof(ShoppingListMiscItems))]
         public List<MiscItem> MiscItems { get; set; }
 
     }

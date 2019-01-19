@@ -37,47 +37,29 @@ namespace WeeklyMealGenerator.Database
             db.CreateTable<ShoppingListIngredient>();
             db.CreateTable<ShoppingListFruit>();
 
+            var food = db.GetAllWithChildren<Meal>();
+            var fruit = db.GetAllWithChildren<Fruit>();
+            var test = food[0].Ingredients;
 
-
-
-            //List<Meal> meals = db.GetAllWithChildren<Meal>();
-            List<Meal> meals = db.GetAllWithChildren<Meal>();
-            List<Ingredient> ingredients = db.GetAllWithChildren<Ingredient>();
-
-            List<int> idsToBeLinked = new List<int>() { 2, 3, 4, 5, 6 };
-            CreatManyToManyLink(meals[0], idsToBeLinked, meals, ingredients);
-
-            idsToBeLinked = new List<int>() { 12, 29, 31, 28 };
-            CreatManyToManyLink(meals[1], idsToBeLinked, meals, ingredients);
-
-            idsToBeLinked = new List<int>() { 12, 24, 27, 28,73 };
-            CreatManyToManyLink(meals[2], idsToBeLinked, meals, ingredients);
-
-            List<Meal> test = db.GetAllWithChildren<Meal>();
-
-
-
-
-
-
-
-
-
-
-        }
-
-
-        private static void CreatManyToManyLink(Meal meal, List<int> ingredientsId, List<Meal> allMeals, List<Ingredient> allIngredients)
-        {
-            var db = new SQLiteConnection(DBPATH);
-            Meal tempMeal = meal;
-            List<Ingredient> ingredients = allIngredients.Where(r => ingredientsId.Contains(r.Id)).ToList();
-            foreach (Ingredient ingredient in ingredients)
+            db.InsertWithChildren(new ShoppingList
             {
-                tempMeal.Ingredients.Add(ingredient);
-            }
-            db.UpdateWithChildren(tempMeal);
+                Name = "Shopping List",
+                Ingredients = food[0].Ingredients,
+                Fruits = fruit,
+                Date = DateTime.Now.ToString(),
+                MiscItems = null
+            });
+
+
+
+
+
+
+
         }
+
+
+
 
         public static void CopyMealsWithIngredientsIntoDatabase(string dbName, string dbPath)
         {

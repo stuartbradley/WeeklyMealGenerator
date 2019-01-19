@@ -72,6 +72,7 @@
     <Compile Include="Models\MiscItem.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Interfaces\IShoppingItem.cs" />
+    <Compile Include="Models\ShoppingItem.cs" />
     <Compile Include="Models\ShoppingList.cs" />
     <Compile Include="Models\ShoppingListFruit.cs" />
     <Compile Include="Models\ShoppingListMiscItems.cs" />
